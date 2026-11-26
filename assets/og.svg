@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0f1218" />
+  <rect x="0" y="0" width="1200" height="8" fill="#8ab4ff" />
+
+  <rect x="80" y="70" width="64" height="64" rx="14" fill="#f4f1ea" />
+  <text x="112" y="113" text-anchor="middle" font-family="Iowan Old Style, Palatino, Georgia, serif" font-size="26" font-weight="600" fill="#16130f">OE</text>
+  <text x="164" y="112" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="600" fill="#f4f1ea">Oficio EV</text>
+
+  <text x="80" y="222" font-family="Helvetica, Arial, sans-serif" font-size="20" letter-spacing="4" fill="#9c958a">SITIOS WEB · ITAPÚA, PARAGUAY</text>
+
+  <text x="78" y="332" font-family="Georgia, Palatino, serif" font-size="72" fill="#f4f1ea">Tu negocio, visible</text>
+  <text x="78" y="412" font-family="Georgia, Palatino, serif" font-size="72" fill="#f4f1ea">en internet.</text>
+
+  <text x="80" y="500" font-family="Helvetica, Arial, sans-serif" font-size="22" fill="#c9d3e3">5 idiomas · Listo en una semana · WhatsApp directo</text>
+
+  <line x1="80" y1="540" x2="1120" y2="540" stroke="#252b35" />
+
+  <text x="80" y="585" font-family="Helvetica, Arial, sans-serif" font-size="20" fill="#9c958a">oficioev.com</text>
+  <text x="1120" y="585" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="20" fill="#9c958a">Desde 1.500.000 Gs</text>
+</svg>

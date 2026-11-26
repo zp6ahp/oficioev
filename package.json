@@ -1,0 +1,22 @@
+{
+  "name": "oficio-ev",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Oficio EV \u2014 one-page business card site: no build, no dependencies.",
+  "scripts": {
+    "check": "node scripts/check.mjs",
+    "lint": "eslint .",
+    "format": "prettier --check .",
+    "format:write": "prettier --write .",
+    "test": "npm run check && npm run lint && npm run format",
+    "serve": "python3 -m http.server 8080",
+    "build": "node scripts/build.mjs",
+    "preview": "python3 -m http.server 8082"
+  },
+  "license": "SEE LICENSE IN LICENSE",
+  "devDependencies": {
+    "eslint": "^10.15.0",
+    "prettier": "^3.10.1"
+  }
+}
