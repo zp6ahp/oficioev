@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="es" data-theme="blue" data-mode="dark" data-page="terms">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Theme and mode before first paint: avoids a flash -->
+    <script>
+      (function () {
+        var d = document.documentElement;
+        d.classList.add("js");
+        var params = null;
+        try {
+          params = new URLSearchParams(location.search);
+        } catch (e) {
+          params = null;
+        }
+        var urlTheme = params ? params.get("theme") : null;
+        var urlMode = params ? params.get("mode") : null;
+        try {
+          d.dataset.theme = urlTheme || localStorage.getItem("oficioev.theme") || "blue";
+          d.dataset.mode = urlMode || localStorage.getItem("oficioev.mode") || "dark";
+        } catch (e) {
+          d.dataset.theme = "blue";
+          d.dataset.mode = "dark";
+        }
+      })();
+    </script>
+
+    <title>Condiciones del servicio · Oficio EV</title>
+    <meta
+      name="description"
+      content="Alcance, pagos, plazos, dominio, garantía y datos: las condiciones de trabajo de Oficio EV."
+    />
+    <link rel="canonical" href="https://oficioev.com/condiciones" />
+    <meta name="theme-color" content="#0f1218" />
+    <meta name="robots" content="index, follow" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Condiciones del servicio · Oficio EV" />
+    <meta
+      property="og:description"
+      content="Alcance, pagos, plazos, dominio, garantía y datos: las condiciones de trabajo de Oficio EV."
+    />
+    <meta property="og:url" content="https://oficioev.com/condiciones" />
+    <meta property="og:site_name" content="Oficio EV" />
+    <meta property="og:locale" content="es_PY" />
+    <meta property="og:image" content="https://oficioev.com/assets/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#contenido" data-i18n="ui.skip">Saltar al contenido</a>
+
+    <header class="site-header">
+      <div class="wrap header-inner header-inner--simple">
+        <a class="brand" href="/">
+          <span class="brand-mark" aria-hidden="true">OE</span>
+          <span class="brand-name">Oficio EV<span class="brand-dot">.</span></span>
+        </a>
+        <div class="controls">
+          <div
+            class="swatches"
+            role="radiogroup"
+            aria-label="Tema"
+            data-i18n-aria="ui.theme"
+            data-theme-group
+          ></div>
+
+          <div class="modes" role="radiogroup" aria-label="Modo" data-i18n-aria="ui.mode">
+            <button
+              class="mode-btn"
+              type="button"
+              role="radio"
+              aria-checked="false"
+              tabindex="-1"
+              data-mode-set="light"
+              aria-label="Día"
+              data-i18n-aria="ui.mode.light"
+              title="Día"
+            >
+              <svg class="ico" viewBox="0 0 20 20" aria-hidden="true">
+                <circle
+                  cx="10"
+                  cy="10"
+                  r="3.4"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                />
+                <path
+                  d="M10 2v2.2M10 15.8V18M2 10h2.2M15.8 10H18M4.3 4.3l1.6 1.6M14.1 14.1l1.6 1.6M15.7 4.3l-1.6 1.6M5.9 14.1l-1.6 1.6"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </button>
+            <button
+              class="mode-btn"
+              type="button"
+              role="radio"
+              aria-checked="false"
+              tabindex="-1"
+              data-mode-set="dark"
+              aria-label="Noche"
+              data-i18n-aria="ui.mode.dark"
+              title="Noche"
+            >
+              <svg class="ico" viewBox="0 0 20 20" aria-hidden="true">
+                <path
+                  d="M15.6 12.7A6.4 6.4 0 0 1 7.3 4.4a6.6 6.6 0 1 0 8.3 8.3z"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <div class="lang" data-lang>
+            <button
+              class="lang-btn"
+              type="button"
+              data-lang-trigger
+              aria-haspopup="listbox"
+              aria-expanded="false"
+              aria-controls="lang-menu"
+              aria-label="Idioma"
+              data-i18n-aria="ui.lang"
+            >
+              <span data-lang-code>ES</span>
+              <svg class="lang-chevron" viewBox="0 0 20 20" aria-hidden="true">
+                <path
+                  d="m6 8 4 4 4-4"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+            <div
+              class="lang-menu"
+              id="lang-menu"
+              role="listbox"
+              data-lang-menu
+              aria-label="Idioma"
+              data-i18n-aria="ui.lang"
+              hidden
+            ></div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="contenido" class="wrap page terms">
+      <a class="page-back" href="/" data-i18n="page.back">← Volver al inicio</a>
+      <p class="kicker" data-i18n="terms.kicker">Legal</p>
+      <h1 data-i18n="terms.h1">Condiciones del servicio.</h1>
+      <p class="lede" data-i18n="terms.lede">
+        Reglas claras para que ambos sepamos qué esperar. Última actualización: noviembre de 2026.
+      </p>
+
+      <section>
+        <h2 data-i18n="terms.s1.t">1. Alcance del servicio</h2>
+        <p data-i18n="terms.s1.b">
+          Hago sitios web estáticos de una página, su publicación y, si se acuerda, la configuración
+          del perfil de Google. Cualquier función extra (tienda, pagos, reservas automáticas, panel
+          de administración) se presupuesta aparte.
+        </p>
+      </section>
+      <section>
+        <h2 data-i18n="terms.s2.t">2. Presupuesto y pago</h2>
+        <p data-i18n="terms.s2.b">
+          El precio y el alcance se confirman por escrito antes de empezar. El trabajo comienza con
+          un anticipo acordado; el saldo se paga antes de publicar. Los precios se expresan en
+          guaraníes y pueden cambiar para trabajos futuros.
+        </p>
+      </section>
+      <section>
+        <h2 data-i18n="terms.s3.t">3. Plazos y contenido</h2>
+        <p data-i18n="terms.s3.b">
+          El plazo habitual es de 5 a 7 días hábiles desde que recibo el contenido completo. Si el
+          cliente tarda en enviar textos, fotos o aprobaciones, el plazo se corre en la misma
+          medida.
+        </p>
+      </section>
+      <section>
+        <h2 data-i18n="terms.s4.t">4. Cambios y revisiones</h2>
+        <p data-i18n="terms.s4.b">
+          Tres rondas de ajustes están incluidas antes de publicar. Los cambios posteriores o los
+          que amplían el alcance se cotizan antes de hacerlos. El cliente es responsable de revisar
+          y aprobar el contenido.
+        </p>
+      </section>
+      <section>
+        <h2 data-i18n="terms.s5.t">5. Dominio, hosting e idiomas</h2>
+        <p data-i18n="terms.s5.b">
+          El dominio propio es opcional y se registra a nombre del cliente: 150.000 Gs de gestión y
+          150.000 Gs al año, renovable por el cliente. El hosting estático es gratuito. Dos idiomas
+          están incluidos; cada idioma adicional cuesta 150.000 Gs.
+        </p>
+      </section>
+      <section>
+        <h2 data-i18n="terms.s6.t">6. Propiedad y portafolio</h2>
+        <p data-i18n="terms.s6.b">
+          El cliente conserva la propiedad de sus textos, fotos y logo. El sitio pasa a ser del
+          cliente una vez pagado el total. Puedo mostrar el trabajo en mi portafolio salvo que el
+          cliente pida lo contrario por escrito.
+        </p>
+      </section>
+      <section>
+        <h2 data-i18n="terms.s7.t">7. Garantía y responsabilidad</h2>
+        <p data-i18n="terms.s7.b">
+          Corrijo sin cargo los errores técnicos del sitio durante los 30 días posteriores a la
+          publicación. No garantizo posiciones en Google, cantidad de visitas ni ventas. El cliente
+          es responsable de la veracidad y los derechos del contenido que entrega.
+        </p>
+      </section>
+      <section>
+        <h2 data-i18n="terms.s8.t">8. Cancelación, datos y ley</h2>
+        <p data-i18n="terms.s8.b">
+          Si el cliente cancela con el trabajo iniciado, el anticipo no se devuelve; si cancelo yo,
+          devuelvo la parte no trabajada. Los mensajes y datos de contacto se usan solo para
+          responder. No se venden ni se comparten con terceros para marketing; solo los tratan los
+          servicios necesarios para la comunicación (WhatsApp, correo o hosting) y las autoridades
+          cuando la ley lo exija. El sitio guarda preferencias de tema e idioma en el navegador. Se
+          aplica la legislación de Paraguay.
+        </p>
+      </section>
+
+      <p class="page-links">
+        <a href="/faq" data-i18n="terms.faq">Ver preguntas frecuentes</a>
+      </p>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <span
+          >© <span data-year>2026</span> Oficio EV ·
+          <span data-i18n="footer.role">Sitios web</span></span
+        >
+        <nav class="footer-links">
+          <a href="/faq" data-i18n="footer.faq">Preguntas frecuentes</a>
+          <a href="/condiciones" data-i18n="footer.terms">Condiciones del servicio</a>
+        </nav>
+        <span class="footer-note" data-i18n="footer.note">Hecho a mano, sin plantillas.</span>
+      </div>
+    </footer>
+
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

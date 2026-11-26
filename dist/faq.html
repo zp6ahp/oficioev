@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="es" data-theme="blue" data-mode="dark" data-page="faq">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Theme and mode before first paint: avoids a flash -->
+    <script>
+      (function () {
+        var d = document.documentElement;
+        d.classList.add("js");
+        var params = null;
+        try {
+          params = new URLSearchParams(location.search);
+        } catch (e) {
+          params = null;
+        }
+        var urlTheme = params ? params.get("theme") : null;
+        var urlMode = params ? params.get("mode") : null;
+        try {
+          d.dataset.theme = urlTheme || localStorage.getItem("oficioev.theme") || "blue";
+          d.dataset.mode = urlMode || localStorage.getItem("oficioev.mode") || "dark";
+        } catch (e) {
+          d.dataset.theme = "blue";
+          d.dataset.mode = "dark";
+        }
+      })();
+    </script>
+
+    <title>Preguntas frecuentes · Oficio EV</title>
+    <meta
+      name="description"
+      content="Precios, plazos, dominio, idiomas y pagos: respuestas antes de encargar tu sitio web."
+    />
+    <link rel="canonical" href="https://oficioev.com/faq" />
+    <meta name="theme-color" content="#0f1218" />
+    <meta name="robots" content="index, follow" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Preguntas frecuentes · Oficio EV" />
+    <meta
+      property="og:description"
+      content="Precios, plazos, dominio, idiomas y pagos: respuestas antes de encargar tu sitio web."
+    />
+    <meta property="og:url" content="https://oficioev.com/faq" />
+    <meta property="og:site_name" content="Oficio EV" />
+    <meta property="og:locale" content="es_PY" />
+    <meta property="og:image" content="https://oficioev.com/assets/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Cuánto cuesta un sitio?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Una página de presentación desde 1.500.000 Gs; con turnos, desde 2.800.000 Gs; el perfil de Google, desde 500.000 Gs. El presupuesto final depende del contenido y las funciones."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué incluye el precio?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Diseño, textos base, publicación, HTTPS, versión móvil, dos idiomas y los botones de WhatsApp y redes. No incluye dominio propio ni cambios fuera del alcance acordado."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cuánto tarda?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Normalmente una semana desde que tengo todo el contenido. Si faltan textos o fotos, el plazo empieza cuando los recibo."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿El dominio es mío?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí. Lo registramos a tu nombre. Cuesta 150.000 Gs de gestión y 150.000 Gs al año; es opcional, el sitio también funciona con la dirección gratuita de hosting."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Hay mensualidad o mantenimiento?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No hay abono obligatorio: el hosting estático es gratuito. Solo pagás el dominio si lo querés. Los cambios posteriores se presupuestan aparte."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿En qué idiomas puede estar?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "En español, inglés, portugués, alemán o ruso. Dos idiomas están incluidos; cada idioma adicional cuesta 150.000 Gs. También puedo hacer una versión multilingüe completa, con presupuesto aparte."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué necesitás de mí?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Una charla de diez minutos, tu logo si tenés, fotos, precios, horarios y formas de contacto. Si no tenés textos, los escribo yo y vos aprobás."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Puedo pedir cambios después?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí. Tres rondas de ajustes están incluidas antes de publicar. Después, los cambios se cotizan según lo que pidas."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cómo se paga y cómo empezamos?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Escribime por WhatsApp, acordamos el alcance y el precio por escrito, y el trabajo arranca con un anticipo. El saldo se paga antes de publicar."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Dónde se aloja el sitio y quién paga el hosting?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "En un hosting estático gratuito, con HTTPS incluido y sin costo mensual. No necesitás crear cuentas: yo publico el sitio y me encargo de que siga online. El dominio propio, si lo querés, va a tu nombre y lo renovás vos."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#contenido" data-i18n="ui.skip">Saltar al contenido</a>
+
+    <header class="site-header">
+      <div class="wrap header-inner header-inner--simple">
+        <a class="brand" href="/">
+          <span class="brand-mark" aria-hidden="true">OE</span>
+          <span class="brand-name">Oficio EV<span class="brand-dot">.</span></span>
+        </a>
+        <div class="controls">
+          <div
+            class="swatches"
+            role="radiogroup"
+            aria-label="Tema"
+            data-i18n-aria="ui.theme"
+            data-theme-group
+          ></div>
+
+          <div class="modes" role="radiogroup" aria-label="Modo" data-i18n-aria="ui.mode">
+            <button
+              class="mode-btn"
+              type="button"
+              role="radio"
+              aria-checked="false"
+              tabindex="-1"
+              data-mode-set="light"
+              aria-label="Día"
+              data-i18n-aria="ui.mode.light"
+              title="Día"
+            >
+              <svg class="ico" viewBox="0 0 20 20" aria-hidden="true">
+                <circle
+                  cx="10"
+                  cy="10"
+                  r="3.4"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                />
+                <path
+                  d="M10 2v2.2M10 15.8V18M2 10h2.2M15.8 10H18M4.3 4.3l1.6 1.6M14.1 14.1l1.6 1.6M15.7 4.3l-1.6 1.6M5.9 14.1l-1.6 1.6"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </button>
+            <button
+              class="mode-btn"
+              type="button"
+              role="radio"
+              aria-checked="false"
+              tabindex="-1"
+              data-mode-set="dark"
+              aria-label="Noche"
+              data-i18n-aria="ui.mode.dark"
+              title="Noche"
+            >
+              <svg class="ico" viewBox="0 0 20 20" aria-hidden="true">
+                <path
+                  d="M15.6 12.7A6.4 6.4 0 0 1 7.3 4.4a6.6 6.6 0 1 0 8.3 8.3z"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <div class="lang" data-lang>
+            <button
+              class="lang-btn"
+              type="button"
+              data-lang-trigger
+              aria-haspopup="listbox"
+              aria-expanded="false"
+              aria-controls="lang-menu"
+              aria-label="Idioma"
+              data-i18n-aria="ui.lang"
+            >
+              <span data-lang-code>ES</span>
+              <svg class="lang-chevron" viewBox="0 0 20 20" aria-hidden="true">
+                <path
+                  d="m6 8 4 4 4-4"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+            <div
+              class="lang-menu"
+              id="lang-menu"
+              role="listbox"
+              data-lang-menu
+              aria-label="Idioma"
+              data-i18n-aria="ui.lang"
+              hidden
+            ></div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="contenido" class="wrap page">
+      <a class="page-back" href="/" data-i18n="page.back">← Volver al inicio</a>
+      <p class="kicker" data-i18n="faq.kicker">Información</p>
+      <h1 data-i18n="faq.h1">Preguntas frecuentes.</h1>
+      <p class="lede" data-i18n="faq.lede">
+        Lo que más me preguntan antes de empezar. Si falta algo, escribime por WhatsApp.
+      </p>
+
+      <div class="faq">
+        <details class="faq-item" open>
+          <summary data-i18n="faq.q1">¿Cuánto cuesta un sitio?</summary>
+          <p data-i18n="faq.a1">
+            Una página de presentación desde 1.500.000 Gs; con turnos, desde 2.800.000 Gs; el perfil
+            de Google, desde 500.000 Gs. El presupuesto final depende del contenido y las funciones.
+          </p>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="faq.q2">¿Qué incluye el precio?</summary>
+          <p data-i18n="faq.a2">
+            Diseño, textos base, publicación, HTTPS, versión móvil, dos idiomas y los botones de
+            WhatsApp y redes. No incluye dominio propio ni cambios fuera del alcance acordado.
+          </p>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="faq.q3">¿Cuánto tarda?</summary>
+          <p data-i18n="faq.a3">
+            Normalmente una semana desde que tengo todo el contenido. Si faltan textos o fotos, el
+            plazo empieza cuando los recibo.
+          </p>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="faq.q4">¿El dominio es mío?</summary>
+          <p data-i18n="faq.a4">
+            Sí. Lo registramos a tu nombre. Cuesta 150.000 Gs de gestión y 150.000 Gs al año; es
+            opcional, el sitio también funciona con la dirección gratuita de hosting.
+          </p>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="faq.q5">¿Hay mensualidad o mantenimiento?</summary>
+          <p data-i18n="faq.a5">
+            No hay abono obligatorio: el hosting estático es gratuito. Solo pagás el dominio si lo
+            querés. Los cambios posteriores se presupuestan aparte.
+          </p>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="faq.q6">¿En qué idiomas puede estar?</summary>
+          <p data-i18n="faq.a6">
+            En español, inglés, portugués, alemán o ruso. Dos idiomas están incluidos; cada idioma
+            adicional cuesta 150.000 Gs. También puedo hacer una versión multilingüe completa, con
+            presupuesto aparte.
+          </p>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="faq.q7">¿Qué necesitás de mí?</summary>
+          <p data-i18n="faq.a7">
+            Una charla de diez minutos, tu logo si tenés, fotos, precios, horarios y formas de
+            contacto. Si no tenés textos, los escribo yo y vos aprobás.
+          </p>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="faq.q8">¿Puedo pedir cambios después?</summary>
+          <p data-i18n="faq.a8">
+            Sí. Tres rondas de ajustes están incluidas antes de publicar. Después, los cambios se
+            cotizan según lo que pidas.
+          </p>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="faq.q9">¿Cómo se paga y cómo empezamos?</summary>
+          <p data-i18n="faq.a9">
+            Escribime por WhatsApp, acordamos el alcance y el precio por escrito, y el trabajo
+            arranca con un anticipo. El saldo se paga antes de publicar.
+          </p>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="faq.q10">¿Dónde se aloja el sitio y quién paga el hosting?</summary>
+          <p data-i18n="faq.a10">
+            En un hosting estático gratuito, con HTTPS incluido y sin costo mensual. No necesitás
+            crear cuentas: yo publico el sitio y me encargo de que siga online. El dominio propio,
+            si lo querés, va a tu nombre y lo renovás vos.
+          </p>
+        </details>
+      </div>
+
+      <div class="page-cta">
+        <h2 data-i18n="faq.cta.h">¿No encontrás tu respuesta?</h2>
+        <p data-i18n="faq.cta.p">Escribime y te respondo el mismo día.</p>
+        <div class="actions actions--contact">
+          <a class="btn" href="https://wa.me/595995690990" target="_blank" rel="noopener">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 1.67c2.2 0 4.27.86 5.83 2.42a8.2 8.2 0 0 1 2.41 5.82c0 4.54-3.7 8.24-8.25 8.24a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.19-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24zm-2.53 4.4c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2 0 1.18.86 2.32.98 2.48.12.16 1.68 2.56 4.06 3.59.57.25 1.01.39 1.36.5.57.18 1.09.16 1.5.1.46-.07 1.4-.57 1.6-1.13.2-.55.2-1.03.14-1.13-.06-.1-.22-.16-.46-.28-.24-.12-1.4-.69-1.62-.77-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.19-.71-.63-1.19-1.41-1.33-1.65-.14-.24-.02-.37.1-.49.1-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.4-.54-.41h-.47z"
+                fill="currentColor"
+              />
+            </svg>
+            <span data-i18n="faq.cta.b">WhatsApp</span>
+          </a>
+          <a class="btn btn-ghost" href="https://t.me/oficioev" target="_blank" rel="noopener">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M11.94 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.06 0zm4.96 7.22c.1 0 .32.03.47.14a.5.5 0 0 1 .17.33c.02.09.04.3.02.47-.18 1.9-.96 6.5-1.36 8.63-.17.9-.5 1.2-.82 1.23-.7.06-1.22-.46-1.9-.9-1.05-.7-1.65-1.13-2.68-1.8-1.18-.78-.42-1.21.26-1.91.18-.19 3.25-2.98 3.3-3.23.01-.03.02-.15-.05-.21s-.18-.04-.25-.03c-.11.03-1.8 1.14-5.06 3.35-.48.33-.92.49-1.3.48-.43 0-1.26-.24-1.87-.44-.75-.24-1.35-.37-1.3-.79.03-.21.33-.43.9-.66 3.46-1.5 5.77-2.5 6.92-2.98 3.3-1.37 3.99-1.61 4.43-1.62z"
+                fill="currentColor"
+              />
+            </svg>
+            <span>Telegram</span>
+          </a>
+          <button
+            class="btn btn-ghost btn-qr"
+            type="button"
+            data-qr-open
+            aria-label="Mostrar código QR"
+            data-i18n-aria="qr.open"
+          >
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <rect
+                x="3"
+                y="3"
+                width="6"
+                height="6"
+                rx="1"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
+              <rect
+                x="15"
+                y="3"
+                width="6"
+                height="6"
+                rx="1"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
+              <rect
+                x="3"
+                y="15"
+                width="6"
+                height="6"
+                rx="1"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
+              <path
+                d="M15 15h2v2h-2zM19 15h2v2h-2zM15 19h2v2h-2zM19 19h2v2h-2z"
+                fill="currentColor"
+              />
+            </svg>
+            <span>QR</span>
+          </button>
+        </div>
+        <p class="page-links">
+          <a href="/condiciones" data-i18n="faq.terms">Ver condiciones del servicio</a>
+        </p>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <span
+          >© <span data-year>2026</span> Oficio EV ·
+          <span data-i18n="footer.role">Sitios web</span></span
+        >
+        <nav class="footer-links">
+          <a href="/faq" data-i18n="footer.faq">Preguntas frecuentes</a>
+          <a href="/condiciones" data-i18n="footer.terms">Condiciones del servicio</a>
+        </nav>
+        <span class="footer-note" data-i18n="footer.note">Hecho a mano, sin plantillas.</span>
+      </div>
+    </footer>
+
+    <dialog class="qr-dialog" data-qr-dialog aria-labelledby="qr-title">
+      <div class="qr-card">
+        <button
+          class="qr-close"
+          type="button"
+          data-qr-close
+          aria-label="Cerrar"
+          data-i18n-aria="qr.close"
+        >
+          ×
+        </button>
+        <p class="qr-kicker" data-i18n="qr.kicker">Abrir en el móvil</p>
+        <h2 id="qr-title" data-i18n="qr.title">Escaneá este código.</h2>
+        <div class="qr-box" data-qr-code></div>
+        <p class="qr-url" data-qr-url></p>
+        <p class="qr-hint" data-i18n="qr.hint">Apuntá la cámara del teléfono al código.</p>
+        <p class="qr-local" data-qr-local hidden data-i18n="qr.local">
+          Estás en local: el QR solo funcionará desde la versión pública.
+        </p>
+      </div>
+    </dialog>
+
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/qr.js"></script>
+  </body>
+</html>

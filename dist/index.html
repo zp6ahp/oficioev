@@ -1,0 +1,1336 @@
+<!doctype html>
+<html lang="es" data-theme="blue" data-mode="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Theme and mode before first paint: avoids a flash -->
+    <script>
+      (function () {
+        var d = document.documentElement;
+        d.classList.add("js");
+
+        var params = null;
+        try {
+          params = new URLSearchParams(location.search);
+        } catch (e) {
+          params = null;
+        }
+
+        var urlTheme = params ? params.get("theme") : null;
+        var urlMode = params ? params.get("mode") : null;
+
+        try {
+          d.dataset.theme = urlTheme || localStorage.getItem("oficioev.theme") || "blue";
+          d.dataset.mode = urlMode || localStorage.getItem("oficioev.mode") || "dark";
+        } catch (e) {
+          d.dataset.theme = "blue";
+          d.dataset.mode = "dark";
+        }
+
+        // Enable the reveal animation only when it is actually possible.
+        try {
+          var noMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+          if (!noMotion && "IntersectionObserver" in window) d.classList.add("reveal-ready");
+        } catch (e) {
+          /* no animation, content is visible right away */
+        }
+      })();
+    </script>
+
+    <title>Oficio EV · Sitios web en Itapúa, listos en una semana</title>
+    <meta
+      name="description"
+      content="Sitio de una página listo en una semana. Rápido, móvil, en español, portugués, inglés, alemán o ruso. Desde 1.500.000 Gs; dominio propio aparte."
+    />
+    <link rel="canonical" href="https://oficioev.com/" />
+
+    <meta name="theme-color" content="#0f1218" />
+    <meta name="robots" content="index, follow" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Oficio EV · Tu negocio, visible en internet" />
+    <meta
+      property="og:description"
+      content="Sitio de una página listo en una semana, en español, portugués, inglés, alemán o ruso. Desde 1.500.000 Gs; dominio propio aparte."
+    />
+    <meta property="og:url" content="https://oficioev.com/" />
+    <meta property="og:site_name" content="Oficio EV" />
+    <meta property="og:locale" content="es_PY" />
+    <meta property="og:image" content="https://oficioev.com/assets/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Oficio EV — sitios web para tu negocio en Itapúa, Paraguay"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Oficio EV · Tu negocio, visible en internet" />
+    <meta
+      name="twitter:description"
+      content="Sitio de una página listo en una semana, en cinco idiomas. Desde 1.500.000 Gs."
+    />
+    <meta name="twitter:image" content="https://oficioev.com/assets/og.png" />
+
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Oficio EV · Sitios web",
+        "description": "Sitios web de una página para negocios de Itapúa, Paraguay. Rápidos, adaptados al celular, en español, portugués, inglés, alemán o ruso, listos en una semana. Desde 1.500.000 Gs; dominio propio aparte.",
+        "url": "https://oficioev.com/",
+        "image": "https://oficioev.com/assets/og.png",
+        "telephone": "+595 995 690 990",
+        "email": "hola@oficioev.com",
+        "areaServed": ["Obligado", "Encarnación", "Itapúa", "Paraguay"],
+        "availableLanguage": ["es", "en", "pt", "ru", "de"],
+        "sameAs": ["https://www.instagram.com/oficioev/", "https://t.me/oficioev"],
+        "priceRange": "Gs. 500.000 – 2.800.000"
+      }
+    </script>
+  </head>
+
+  <body>
+    <a class="skip" href="#contenido" data-i18n="ui.skip">Saltar al contenido</a>
+
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="brand" href="#inicio">
+          <span class="brand-mark" aria-hidden="true">OE</span>
+          <span class="brand-name">Oficio EV<span class="brand-dot">.</span></span>
+        </a>
+
+        <nav class="nav" aria-label="Principal" data-i18n-aria="ui.nav">
+          <a href="#servicios" data-i18n="nav.services">Servicios</a>
+          <a href="#trabajos" data-i18n="nav.works">Trabajos</a>
+          <a href="#como" data-i18n="nav.how">Cómo funciona</a>
+          <a href="#sobre" data-i18n="nav.about">Sobre mí</a>
+          <a href="#resenas" data-i18n="nav.reviews">Reseñas</a>
+        </nav>
+
+        <div class="controls">
+          <div
+            class="swatches"
+            role="radiogroup"
+            aria-label="Tema"
+            data-i18n-aria="ui.theme"
+            data-theme-group
+          ></div>
+
+          <div class="modes" role="radiogroup" aria-label="Modo" data-i18n-aria="ui.mode">
+            <button
+              class="mode-btn"
+              type="button"
+              role="radio"
+              aria-checked="false"
+              tabindex="-1"
+              data-mode-set="light"
+              aria-label="Día"
+              data-i18n-aria="ui.mode.light"
+              title="Día"
+            >
+              <svg class="ico" viewBox="0 0 20 20" aria-hidden="true">
+                <circle
+                  cx="10"
+                  cy="10"
+                  r="3.4"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                />
+                <path
+                  d="M10 2v2.2M10 15.8V18M2 10h2.2M15.8 10H18M4.3 4.3l1.6 1.6M14.1 14.1l1.6 1.6M15.7 4.3l-1.6 1.6M5.9 14.1l-1.6 1.6"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </button>
+            <button
+              class="mode-btn"
+              type="button"
+              role="radio"
+              aria-checked="false"
+              tabindex="-1"
+              data-mode-set="dark"
+              aria-label="Noche"
+              data-i18n-aria="ui.mode.dark"
+              title="Noche"
+            >
+              <svg class="ico" viewBox="0 0 20 20" aria-hidden="true">
+                <path
+                  d="M15.6 12.7A6.4 6.4 0 0 1 7.3 4.4a6.6 6.6 0 1 0 8.3 8.3z"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <div class="lang" data-lang>
+            <button
+              class="lang-btn"
+              type="button"
+              data-lang-trigger
+              aria-haspopup="listbox"
+              aria-expanded="false"
+              aria-controls="lang-menu"
+              aria-label="Idioma"
+              data-i18n-aria="ui.lang"
+            >
+              <span data-lang-code>ES</span>
+              <svg class="lang-chevron" viewBox="0 0 20 20" aria-hidden="true">
+                <path
+                  d="m6 8 4 4 4-4"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+            <div
+              class="lang-menu"
+              id="lang-menu"
+              role="listbox"
+              data-lang-menu
+              aria-label="Idioma"
+              data-i18n-aria="ui.lang"
+              hidden
+            ></div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="contenido">
+      <!-- HERO -->
+      <section class="hero" id="inicio">
+        <div class="wrap hero-inner">
+          <div class="hero-copy">
+            <p class="kicker" data-i18n="hero.kicker">Sitios web · Itapúa, Paraguay</p>
+            <h1 data-i18n="hero.h1">Tu negocio, visible en internet.</h1>
+            <p class="lede" data-i18n="hero.lede">
+              Sitio de una página con tu contenido: quién sos, qué ofrecés, precios y contacto
+              directo por WhatsApp. Rápido, se ve bien en el celular y puede estar en español,
+              portugués, inglés, alemán o ruso, o en varios idiomas a la vez.
+            </p>
+
+            <p class="actions-label" data-i18n="hero.contact">Escribime en:</p>
+            <div class="actions actions--hero">
+              <div class="action-group">
+                <a
+                  class="btn btn-ghost"
+                  href="https://wa.me/595995690990"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 1.67c2.2 0 4.27.86 5.83 2.42a8.2 8.2 0 0 1 2.41 5.82c0 4.54-3.7 8.24-8.25 8.24a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.19-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24zm-2.53 4.4c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2 0 1.18.86 2.32.98 2.48.12.16 1.68 2.56 4.06 3.59.57.25 1.01.39 1.36.5.57.18 1.09.16 1.5.1.46-.07 1.4-.57 1.6-1.13.2-.55.2-1.03.14-1.13-.06-.1-.22-.16-.46-.28-.24-.12-1.4-.69-1.62-.77-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.19-.71-.63-1.19-1.41-1.33-1.65-.14-.24-.02-.37.1-.49.1-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.4-.54-.41h-.47z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                  <span data-i18n="hero.wa">WhatsApp</span>
+                </a>
+                <button
+                  class="qr-mini"
+                  type="button"
+                  data-qr-open
+                  data-qr-url="https://wa.me/595995690990"
+                  aria-label="WhatsApp QR"
+                  data-i18n-aria="qr.wa"
+                >
+                  QR
+                </button>
+              </div>
+              <div class="action-group">
+                <a
+                  class="btn btn-ghost"
+                  href="https://t.me/oficioev"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M11.94 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.06 0zm4.96 7.22c.1 0 .32.03.47.14a.5.5 0 0 1 .17.33c.02.09.04.3.02.47-.18 1.9-.96 6.5-1.36 8.63-.17.9-.5 1.2-.82 1.23-.7.06-1.22-.46-1.9-.9-1.05-.7-1.65-1.13-2.68-1.8-1.18-.78-.42-1.21.26-1.91.18-.19 3.25-2.98 3.3-3.23.01-.03.02-.15-.05-.21s-.18-.04-.25-.03c-.11.03-1.8 1.14-5.06 3.35-.48.33-.92.49-1.3.48-.43 0-1.26-.24-1.87-.44-.75-.24-1.35-.37-1.3-.79.03-.21.33-.43.9-.66 3.46-1.5 5.77-2.5 6.92-2.98 3.3-1.37 3.99-1.61 4.43-1.62z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                  <span data-i18n="hero.tg">Telegram</span>
+                </a>
+                <button
+                  class="qr-mini"
+                  type="button"
+                  data-qr-open
+                  data-qr-url="https://t.me/oficioev"
+                  aria-label="Telegram QR"
+                  data-i18n-aria="qr.tg"
+                >
+                  QR
+                </button>
+              </div>
+              <div class="action-group">
+                <a
+                  class="btn btn-ghost"
+                  href="https://www.instagram.com/oficioev/"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63a5.9 5.9 0 0 0-2.13 1.38A5.9 5.9 0 0 0 .63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91a5.9 5.9 0 0 0 1.38 2.13 5.9 5.9 0 0 0 2.13 1.38c.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.9 5.9 0 0 0 2.13-1.38 5.9 5.9 0 0 0 1.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.9 5.9 0 0 0-1.38-2.13A5.9 5.9 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm7.85-10.4a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                  <span data-i18n="hero.ig">Instagram</span>
+                </a>
+                <button
+                  class="qr-mini"
+                  type="button"
+                  data-qr-open
+                  data-qr-url="https://www.instagram.com/oficioev/"
+                  aria-label="Instagram QR"
+                  data-i18n-aria="qr.ig"
+                >
+                  QR
+                </button>
+              </div>
+            </div>
+
+            <p class="avail">
+              <span class="dot" aria-hidden="true"></span>
+              <span data-i18n="hero.avail">Disponible para nuevos proyectos</span>
+            </p>
+            <p class="hero-meta" data-i18n="hero.meta">Listo en una semana · desde 1.500.000 Gs</p>
+          </div>
+
+          <div class="hero-art-wrap">
+            <div class="hero-art" aria-hidden="true">
+              <div class="device device--browser">
+                <div class="device-bar">
+                  <i></i><i></i><i></i>
+                  <span class="device-url"></span>
+                </div>
+                <div class="device-screen">
+                  <div class="mock-scroll">
+                    <div class="mock-page">
+                      <div class="mock-sec m-hero">
+                        <div class="m-stack">
+                          <span class="m-kicker"></span>
+                          <span class="m-title"></span>
+                          <span class="m-title m-short"></span>
+                          <span class="m-line"></span>
+                          <span class="m-line m-short"></span>
+                          <span class="m-btn"></span>
+                        </div>
+                        <span class="m-thumb"></span>
+                      </div>
+                      <div class="mock-sec">
+                        <span class="m-h2"></span>
+                        <div class="m-rows">
+                          <div class="m-row"><i></i><b></b></div>
+                          <div class="m-row"><i></i><b></b></div>
+                          <div class="m-row"><i></i><b></b></div>
+                          <div class="m-row"><i></i><b></b></div>
+                        </div>
+                      </div>
+                      <div class="mock-sec">
+                        <span class="m-h2 m-short"></span>
+                        <div class="m-cards"><i></i><i></i><i></i></div>
+                      </div>
+                      <div class="mock-sec">
+                        <span class="m-line"></span>
+                        <span class="m-line m-short"></span>
+                      </div>
+                    </div>
+                    <div class="mock-page">
+                      <div class="mock-sec m-hero">
+                        <div class="m-stack">
+                          <span class="m-kicker"></span>
+                          <span class="m-title"></span>
+                          <span class="m-title m-short"></span>
+                          <span class="m-line"></span>
+                          <span class="m-line m-short"></span>
+                          <span class="m-btn"></span>
+                        </div>
+                        <span class="m-thumb"></span>
+                      </div>
+                      <div class="mock-sec">
+                        <span class="m-h2"></span>
+                        <div class="m-rows">
+                          <div class="m-row"><i></i><b></b></div>
+                          <div class="m-row"><i></i><b></b></div>
+                          <div class="m-row"><i></i><b></b></div>
+                          <div class="m-row"><i></i><b></b></div>
+                        </div>
+                      </div>
+                      <div class="mock-sec">
+                        <span class="m-h2 m-short"></span>
+                        <div class="m-cards"><i></i><i></i><i></i></div>
+                      </div>
+                      <div class="mock-sec">
+                        <span class="m-line"></span>
+                        <span class="m-line m-short"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="device device--phone">
+                <span class="device-notch"></span>
+                <div class="device-screen">
+                  <div class="mock-scroll mock-scroll--phone">
+                    <div class="mock-page mock-page--phone">
+                      <div class="mock-sec m-profile">
+                        <span class="m-avatar"></span>
+                        <div class="m-stack">
+                          <span class="m-line"></span>
+                          <span class="m-line m-short"></span>
+                        </div>
+                      </div>
+                      <div class="mock-sec"><span class="m-photo"></span></div>
+                      <div class="mock-sec m-bubbles">
+                        <span class="m-bubble"></span>
+                        <span class="m-bubble m-bubble--alt"></span>
+                      </div>
+                      <div class="mock-sec">
+                        <div class="m-list">
+                          <div class="m-item"><i></i><b></b></div>
+                          <div class="m-item"><i></i><b></b></div>
+                        </div>
+                      </div>
+                      <div class="mock-sec">
+                        <div class="m-cards"><i></i><i></i></div>
+                      </div>
+                    </div>
+                    <div class="mock-page mock-page--phone">
+                      <div class="mock-sec m-profile">
+                        <span class="m-avatar"></span>
+                        <div class="m-stack">
+                          <span class="m-line"></span>
+                          <span class="m-line m-short"></span>
+                        </div>
+                      </div>
+                      <div class="mock-sec"><span class="m-photo"></span></div>
+                      <div class="mock-sec m-bubbles">
+                        <span class="m-bubble"></span>
+                        <span class="m-bubble m-bubble--alt"></span>
+                      </div>
+                      <div class="mock-sec">
+                        <div class="m-list">
+                          <div class="m-item"><i></i><b></b></div>
+                          <div class="m-item"><i></i><b></b></div>
+                        </div>
+                      </div>
+                      <div class="mock-sec">
+                        <div class="m-cards"><i></i><i></i></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="device-badge">
+                <svg viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+                  <path
+                    d="M20 4c-6.1 0-11 4.9-11 11 0 8.2 11 21 11 21s11-12.8 11-21c0-6.1-4.9-11-11-11z"
+                    fill="var(--accent)"
+                  />
+                  <circle cx="20" cy="15" r="4" fill="var(--surface)" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section class="section" id="servicios" aria-labelledby="t-servicios">
+        <div class="wrap">
+          <p class="label"><span>01</span> <span data-i18n="svc.label">Servicios</span></p>
+          <h2 id="t-servicios" data-i18n="svc.h2">Tres cosas, bien hechas.</h2>
+
+          <ol class="list">
+            <li class="row">
+              <span class="row-num" aria-hidden="true">01</span>
+              <div class="row-body">
+                <div class="row-head">
+                  <span class="row-icon" aria-hidden="true">
+                    <svg
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <rect x="3" y="2.5" width="14" height="15" rx="2.4" />
+                      <path d="M6.6 7h6.8M6.6 10.2h6.8M6.6 13.4h4" />
+                    </svg>
+                  </span>
+                  <h3 data-i18n="svc.1.t">Sitio de una página</h3>
+                </div>
+                <p data-i18n="svc.1.d">
+                  Tu negocio en una sola página: quién sos, qué ofrecés, precios y cómo contactarte.
+                  En el idioma que necesites —español, portugués, inglés, alemán o ruso—, lista en
+                  una semana.
+                </p>
+              </div>
+              <span class="row-meta" data-i18n="svc.1.m">desde 1.500.000 Gs</span>
+            </li>
+            <li class="row">
+              <span class="row-num" aria-hidden="true">02</span>
+              <div class="row-body">
+                <div class="row-head">
+                  <span class="row-icon" aria-hidden="true">
+                    <svg
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <rect x="2.8" y="4" width="14.4" height="13" rx="2.4" />
+                      <path d="M2.8 8h14.4M6.6 2.4v3.2M13.4 2.4v3.2" />
+                      <path d="m7.4 12.4 1.7 1.7 3.5-3.6" />
+                    </svg>
+                  </span>
+                  <h3 data-i18n="svc.2.t">Sitio con turnos</h3>
+                </div>
+                <p data-i18n="svc.2.d">
+                  Tus clientes eligen horario y la reserva te llega al instante, con recordatorio
+                  para que no falten.
+                </p>
+              </div>
+              <span class="row-meta" data-i18n="svc.2.m">desde 2.800.000 Gs</span>
+            </li>
+            <li class="row">
+              <span class="row-num" aria-hidden="true">03</span>
+              <div class="row-body">
+                <div class="row-head">
+                  <span class="row-icon" aria-hidden="true">
+                    <svg
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M10 2.6c-3 0-5.4 2.4-5.4 5.4 0 4 5.4 9.4 5.4 9.4s5.4-5.4 5.4-9.4c0-3-2.4-5.4-5.4-5.4z"
+                      />
+                      <circle cx="10" cy="8" r="1.9" />
+                    </svg>
+                  </span>
+                  <h3 data-i18n="svc.3.t">Presencia en Google</h3>
+                </div>
+                <p data-i18n="svc.3.d">
+                  Perfil de empresa, fotos, horarios y enlace para pedir reseñas. Para aparecer
+                  cuando buscan lo que ofrecés.
+                </p>
+              </div>
+              <span class="row-meta" data-i18n="svc.3.m">desde 500.000 Gs</span>
+            </li>
+          </ol>
+
+          <p class="services-note" data-i18n="svc.note">
+            Los precios incluyen diseño, publicación y HTTPS, sin mensualidades. El dominio propio
+            es opcional y queda a tu nombre: 150.000 Gs de trabajo y 150.000 Gs al año por el
+            dominio. Dos idiomas están incluidos; cada idioma adicional cuesta 150.000 Gs.
+          </p>
+          <p class="services-links">
+            <a href="/faq" data-i18n="footer.faq">Preguntas frecuentes</a>
+            <span aria-hidden="true">·</span>
+            <a href="/condiciones" data-i18n="footer.terms">Condiciones del servicio</a>
+          </p>
+        </div>
+      </section>
+
+      <!-- WORK -->
+      <section class="section" id="trabajos" aria-labelledby="t-trabajos">
+        <div class="wrap">
+          <p class="label"><span>02</span> <span data-i18n="works.label">Trabajos</span></p>
+          <h2 id="t-trabajos" data-i18n="works.h2">Ejemplos.</h2>
+          <p class="lede" data-i18n="works.lede">
+            Así se ven los sitios que hago: simple, claro y con el contenido de cada negocio.
+          </p>
+
+          <ul class="works">
+            <li>
+              <a class="work-card" href="https://wa.me/595995690990" target="_blank" rel="noopener">
+                <div class="work-media">
+                  <svg class="work-thumb" viewBox="0 0 240 150" aria-hidden="true">
+                    <rect class="wt-bg" x="0.5" y="0.5" width="239" height="149" rx="12" />
+                    <rect class="wt-bar" x="16" y="14" width="150" height="10" rx="5" />
+                    <rect class="wt-line" x="16" y="44" width="128" height="8" rx="4" />
+                    <rect class="wt-line" x="16" y="60" width="100" height="8" rx="4" />
+                    <rect class="wt-line" x="16" y="76" width="146" height="8" rx="4" />
+                    <rect class="wt-btn" x="16" y="102" width="66" height="24" rx="6" />
+                    <rect class="wt-img" x="172" y="42" width="52" height="82" rx="8" />
+                  </svg>
+                  <span class="work-tag" data-i18n="works.tag">Ejemplo</span>
+                </div>
+                <h3 data-i18n="works.1.t">Página de presentación</h3>
+                <p class="work-meta" data-i18n="works.1.m">Comercio o servicio · ES/PT</p>
+                <p class="work-desc" data-i18n="works.1.d">
+                  Quién sos, qué ofrecés, precios y un botón directo a WhatsApp.
+                </p>
+                <span class="work-cta">
+                  <span data-i18n="works.cta">Quiero uno así</span>
+                  <svg class="icon" viewBox="0 0 20 20" aria-hidden="true">
+                    <path
+                      d="M4 10h11M11 5l5 5-5 5"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a class="work-card" href="https://wa.me/595995690990" target="_blank" rel="noopener">
+                <div class="work-media">
+                  <svg class="work-thumb" viewBox="0 0 240 150" aria-hidden="true">
+                    <rect class="wt-bg" x="0.5" y="0.5" width="239" height="149" rx="12" />
+                    <rect class="wt-bar" x="16" y="14" width="150" height="10" rx="5" />
+                    <rect class="wt-line" x="16" y="44" width="128" height="8" rx="4" />
+                    <rect class="wt-line" x="16" y="60" width="100" height="8" rx="4" />
+                    <rect class="wt-line" x="16" y="76" width="146" height="8" rx="4" />
+                    <rect class="wt-btn" x="16" y="102" width="66" height="24" rx="6" />
+                    <rect class="wt-img" x="172" y="42" width="52" height="82" rx="8" />
+                  </svg>
+                  <span class="work-tag" data-i18n="works.tag">Ejemplo</span>
+                </div>
+                <h3 data-i18n="works.2.t">Página con turnos</h3>
+                <p class="work-meta" data-i18n="works.2.m">Peluquería o consultorio · ES</p>
+                <p class="work-desc" data-i18n="works.2.d">
+                  El cliente elige horario, recibe confirmación y un recordatorio.
+                </p>
+                <span class="work-cta">
+                  <span data-i18n="works.cta">Quiero uno así</span>
+                  <svg class="icon" viewBox="0 0 20 20" aria-hidden="true">
+                    <path
+                      d="M4 10h11M11 5l5 5-5 5"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a class="work-card" href="https://wa.me/595995690990" target="_blank" rel="noopener">
+                <div class="work-media">
+                  <svg class="work-thumb" viewBox="0 0 240 150" aria-hidden="true">
+                    <rect class="wt-bg" x="0.5" y="0.5" width="239" height="149" rx="12" />
+                    <rect class="wt-bar" x="16" y="14" width="150" height="10" rx="5" />
+                    <rect class="wt-line" x="16" y="44" width="128" height="8" rx="4" />
+                    <rect class="wt-line" x="16" y="60" width="100" height="8" rx="4" />
+                    <rect class="wt-line" x="16" y="76" width="146" height="8" rx="4" />
+                    <rect class="wt-btn" x="16" y="102" width="66" height="24" rx="6" />
+                    <rect class="wt-img" x="172" y="42" width="52" height="82" rx="8" />
+                  </svg>
+                  <span class="work-tag" data-i18n="works.tag">Ejemplo</span>
+                </div>
+                <h3 data-i18n="works.3.t">Sitio + perfil de Google</h3>
+                <p class="work-meta" data-i18n="works.3.m">Negocio local · ES</p>
+                <p class="work-desc" data-i18n="works.3.d">
+                  Aparecés en el mapa y en las búsquedas con la información al día.
+                </p>
+                <span class="work-cta">
+                  <span data-i18n="works.cta">Quiero uno así</span>
+                  <svg class="icon" viewBox="0 0 20 20" aria-hidden="true">
+                    <path
+                      d="M4 10h11M11 5l5 5-5 5"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- WHY -->
+      <section class="section" id="porque" aria-labelledby="t-porque">
+        <div class="wrap">
+          <p class="label"><span>03</span> <span data-i18n="why.label">Por qué Oficio EV</span></p>
+          <h2 id="t-porque" data-i18n="why.h2">Seis razones.</h2>
+          <p class="lede" data-i18n="why.lede">
+            Sin promesas vacías: esto es lo que cambia cuando el sitio es tuyo, es estático y está
+            hecho a mano.
+          </p>
+
+          <ul class="why-grid">
+            <li class="why-card">
+              <span class="why-num" aria-hidden="true">01</span>
+              <h3 data-i18n="why.1.t">El sitio es tuyo</h3>
+              <p data-i18n="why.1.d">
+                El dominio y el código quedan a tu nombre. Sin lock-in ni plataformas que te
+                retienen.
+              </p>
+            </li>
+            <li class="why-card">
+              <span class="why-num" aria-hidden="true">02</span>
+              <h3 data-i18n="why.2.t">Una semana, no un mes</h3>
+              <p data-i18n="why.2.d">
+                5–7 días desde que tengo el contenido. Sin reuniones eternas ni idas y vueltas.
+              </p>
+            </li>
+            <li class="why-card">
+              <span class="why-num" aria-hidden="true">03</span>
+              <h3 data-i18n="why.3.t">Sin cuota mensual</h3>
+              <p data-i18n="why.3.d">
+                Hosting estático gratuito. Solo pagás el dominio si lo querés; no hay abono
+                obligatorio.
+              </p>
+            </li>
+            <li class="why-card">
+              <span class="why-num" aria-hidden="true">04</span>
+              <h3 data-i18n="why.4.t">Cinco idiomas</h3>
+              <p data-i18n="why.4.d">
+                Español, inglés, portugués, alemán y ruso. Dos incluidos; ideal para la frontera y
+                las colonias.
+              </p>
+            </li>
+            <li class="why-card">
+              <span class="why-num" aria-hidden="true">05</span>
+              <h3 data-i18n="why.5.t">Hecho a mano</h3>
+              <p data-i18n="why.5.d">
+                Diseño propio, menos de 300 KB, sin plugins ni plantillas pesadas. Rápido incluso
+                con datos móviles.
+              </p>
+            </li>
+            <li class="why-card">
+              <span class="why-num" aria-hidden="true">06</span>
+              <h3 data-i18n="why.6.t">Hablo contigo</h3>
+              <p data-i18n="why.6.d">
+                WhatsApp directo, tres rondas de cambios y 30 días de garantía por errores técnicos.
+              </p>
+            </li>
+          </ul>
+
+          <div class="compare">
+            <h3 data-i18n="why.compare.t">Oficio EV frente a lo típico.</h3>
+            <p class="compare-hint" data-i18n="why.hint">Deslizá para comparar →</p>
+            <div class="compare-scroll" tabindex="0">
+              <table
+                class="compare-table"
+                aria-label="Comparación de Oficio EV con plantillas y agencias"
+                data-i18n-aria="why.table.aria"
+              >
+                <thead>
+                  <tr>
+                    <th scope="col" data-i18n="why.feature">Característica</th>
+                    <th scope="col" class="is-us" data-i18n="why.col1">Oficio EV</th>
+                    <th scope="col" data-i18n="why.col2">Plantilla / Wix</th>
+                    <th scope="col" data-i18n="why.col3">Agencia</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row" data-i18n="why.r1.l">Precio inicial</th>
+                    <td class="is-us" data-i18n="why.r1.a">Desde 1.500.000 Gs</td>
+                    <td data-i18n="why.r1.b">Suscripción mensual + plantilla</td>
+                    <td data-i18n="why.r1.c">A menudo desde 2 millones</td>
+                  </tr>
+                  <tr>
+                    <th scope="row" data-i18n="why.r2.l">Plazo</th>
+                    <td class="is-us" data-i18n="why.r2.a">5–7 días</td>
+                    <td data-i18n="why.r2.b">Lo armás vos</td>
+                    <td data-i18n="why.r2.c">3–6 semanas</td>
+                  </tr>
+                  <tr>
+                    <th scope="row" data-i18n="why.r3.l">Cuota mensual</th>
+                    <td class="is-us" data-i18n="why.r3.a">No</td>
+                    <td data-i18n="why.r3.b">Sí</td>
+                    <td data-i18n="why.r3.c">A veces</td>
+                  </tr>
+                  <tr>
+                    <th scope="row" data-i18n="why.r4.l">Dominio y sitio</th>
+                    <td class="is-us" data-i18n="why.r4.a">Tuyos</td>
+                    <td data-i18n="why.r4.b">De la plataforma</td>
+                    <td data-i18n="why.r4.c">Según contrato</td>
+                  </tr>
+                  <tr>
+                    <th scope="row" data-i18n="why.r5.l">Idiomas</th>
+                    <td class="is-us" data-i18n="why.r5.a">2 incluidos, hasta 5</td>
+                    <td data-i18n="why.r5.b">Limitado</td>
+                    <td data-i18n="why.r5.c">Extra</td>
+                  </tr>
+                  <tr>
+                    <th scope="row" data-i18n="why.r6.l">Soporte</th>
+                    <td class="is-us" data-i18n="why.r6.a">Directo, 3 rondas, 30 días</td>
+                    <td data-i18n="why.r6.b">Chat de la plataforma</td>
+                    <td data-i18n="why.r6.c">Gestor o cuenta</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- HOW IT WORKS -->
+      <section class="section" id="como" aria-labelledby="t-como">
+        <div class="wrap">
+          <p class="label"><span>04</span> <span data-i18n="steps.label">Cómo funciona</span></p>
+          <h2 id="t-como" data-i18n="steps.h2">Tres pasos, una semana.</h2>
+
+          <ol class="list">
+            <li class="row">
+              <span class="row-num" aria-hidden="true">01</span>
+              <div class="row-body">
+                <div class="row-head">
+                  <span class="row-icon" aria-hidden="true">
+                    <svg
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <rect x="2.8" y="3.4" width="14.4" height="10.2" rx="2.6" />
+                      <path d="M7 13.6v3.2l3.4-3.2" />
+                    </svg>
+                  </span>
+                  <h3 data-i18n="steps.1.t">Hablamos</h3>
+                </div>
+                <p data-i18n="steps.1.d">
+                  Me contás qué hace tu negocio y qué necesitás. Diez minutos por WhatsApp, sin
+                  reuniones.
+                </p>
+              </div>
+              <span class="row-meta" data-i18n="steps.1.m">10 minutos</span>
+            </li>
+            <li class="row">
+              <span class="row-num" aria-hidden="true">02</span>
+              <div class="row-body">
+                <div class="row-head">
+                  <span class="row-icon" aria-hidden="true">
+                    <svg
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <rect x="3" y="3.4" width="14" height="13.2" rx="2.6" />
+                      <path d="m3.6 13.2 3.5-3.5 3 3 2.4-2.4 3.9 3.9" />
+                      <circle cx="7.4" cy="7.4" r="1.2" />
+                    </svg>
+                  </span>
+                  <h3 data-i18n="steps.2.t">Me mandás el contenido</h3>
+                </div>
+                <p data-i18n="steps.2.d">
+                  Fotos, precios, horarios. Si no tenés los textos, los escribo yo y vos aprobás.
+                </p>
+              </div>
+              <span class="row-meta" data-i18n="steps.2.m">1 día</span>
+            </li>
+            <li class="row">
+              <span class="row-num" aria-hidden="true">03</span>
+              <div class="row-body">
+                <div class="row-head">
+                  <span class="row-icon" aria-hidden="true">
+                    <svg
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <circle cx="10" cy="10" r="7.2" />
+                      <path
+                        d="M2.8 10h14.4M10 2.8c2 2 3 4.5 3 7.2s-1 5.2-3 7.2c-2-2-3-4.5-3-7.2s1-5.2 3-7.2z"
+                      />
+                    </svg>
+                  </span>
+                  <h3 data-i18n="steps.3.t">En una semana está online</h3>
+                </div>
+                <p data-i18n="steps.3.d">
+                  Te paso el enlace, lo revisamos juntos y ajustamos lo que haga falta. Después
+                  queda tuyo.
+                </p>
+              </div>
+              <span class="row-meta" data-i18n="steps.3.m">5–7 días</span>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="section" id="sobre" aria-labelledby="t-sobre">
+        <div class="wrap">
+          <p class="label"><span>05</span> <span data-i18n="about.label">Sobre mí</span></p>
+          <h2 id="t-sobre" data-i18n="about.h2">Sin intermediarios.</h2>
+
+          <div class="about-grid">
+            <div class="prose">
+              <p data-i18n="about.p1">
+                No uso plantillas pesadas: la página pesa menos de 300 KB y abre rápido incluso con
+                datos móviles. El código queda limpio, sin plugins que se rompen ni mantenimiento
+                obligatorio.
+              </p>
+              <p data-i18n="about.p2">
+                Soy Evgenii, detrás de Oficio EV. Vivo en Itapúa. Trabajo en ruso y español, en
+                persona o por WhatsApp. El sitio lo hago en el idioma que necesites: español,
+                portugués, inglés, alemán o ruso, o en varios a la vez. Si algo no funciona, me
+                escribís y lo arreglo — sin tickets ni formularios.
+              </p>
+            </div>
+
+            <div class="about-art" aria-hidden="true">
+              <svg viewBox="36 156 408 200" focusable="false">
+                <defs>
+                  <clipPath id="code-clip">
+                    <rect x="75" y="191" width="170" height="110" rx="4" />
+                  </clipPath>
+                  <g id="code-block">
+                    <rect x="80" y="196" width="44" height="5" rx="2.5" />
+                    <rect x="88" y="206" width="58" height="5" rx="2.5" />
+                    <rect x="88" y="216" width="34" height="5" rx="2.5" fill="var(--accent)" />
+                    <rect x="96" y="226" width="52" height="5" rx="2.5" />
+                    <rect x="80" y="236" width="66" height="5" rx="2.5" />
+                    <rect x="88" y="246" width="40" height="5" rx="2.5" />
+                    <rect x="80" y="256" width="58" height="5" rx="2.5" fill="var(--accent)" />
+                    <rect x="96" y="266" width="30" height="5" rx="2.5" />
+                    <rect x="80" y="276" width="62" height="5" rx="2.5" />
+                    <rect x="88" y="286" width="46" height="5" rx="2.5" />
+                    <rect x="88" y="296" width="54" height="5" rx="2.5" />
+                  </g>
+                </defs>
+
+                <g
+                  transform="translate(26,0)"
+                  fill="none"
+                  stroke="var(--muted)"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <!-- tabletop, coloured differently from the laptop -->
+                  <path
+                    d="M36 318h356v16a8 8 0 0 1-8 8H44a8 8 0 0 1-8-8z"
+                    fill="var(--bg-soft)"
+                    stroke="none"
+                  />
+                  <path d="M36 318h356" opacity=".55" />
+
+                  <!-- laptop: thin bezel, narrow chassis, rounded corners, MacBook lip -->
+                  <rect x="70" y="186" width="180" height="120" rx="8" fill="var(--bg)" />
+                  <rect x="75" y="191" width="170" height="110" rx="4" />
+
+                  <g clip-path="url(#code-clip)" fill="var(--muted)" stroke="none" opacity=".55">
+                    <g class="code-scroll">
+                      <use href="#code-block" />
+                      <use href="#code-block" y="110" />
+                    </g>
+                  </g>
+
+                  <path d="M70 306h180v5a4 4 0 0 1-4 4H74a4 4 0 0 1-4-4z" fill="var(--bg)" />
+                  <path d="M136 307v2a2 2 0 0 0 2 2h44a2 2 0 0 0 2-2v-2" stroke-width="2.5" />
+
+                  <rect
+                    x="86"
+                    y="315"
+                    width="14"
+                    height="3"
+                    rx="1.5"
+                    fill="var(--muted)"
+                    stroke="none"
+                  />
+                  <rect
+                    x="220"
+                    y="315"
+                    width="14"
+                    height="3"
+                    rx="1.5"
+                    fill="var(--muted)"
+                    stroke="none"
+                  />
+
+                  <!-- note pinned to the wall, right of the laptop -->
+                  <rect x="278" y="176" width="90" height="84" rx="5" fill="var(--bg)" />
+                  <circle cx="323" cy="182" r="3.4" fill="var(--accent)" stroke="none" />
+
+                  <rect x="290" y="196" width="10" height="10" rx="2.5" stroke-width="2.2" />
+                  <path d="M292 201l2.2 2.2 4.2-4.6" stroke-width="2.2" />
+                  <path d="M306 201h44" stroke-width="2.6" opacity=".55" />
+
+                  <rect x="290" y="218" width="10" height="10" rx="2.5" stroke-width="2.2" />
+                  <path d="M292 223l2.2 2.2 4.2-4.6" stroke-width="2.2" />
+                  <path d="M306 223h36" stroke-width="2.6" opacity=".55" />
+
+                  <rect x="290" y="240" width="10" height="10" rx="2.5" stroke-width="2.2" />
+                  <path d="M306 245h40" stroke-width="2.6" opacity=".55" />
+
+                  <!-- mug on the tabletop, under the centre of the note -->
+                  <path d="M306 288h34v21a9 9 0 0 1-9 9h-16a9 9 0 0 1-9-9z" fill="var(--bg)" />
+                  <ellipse cx="323" cy="288" rx="17" ry="4.5" />
+                  <path d="M340 295h6a8 8 0 0 1 0 16h-6" />
+                  <path
+                    d="M315 280c3-3.5 0-5 3-8.5M329 280c3-3.5 0-5 3-8.5"
+                    stroke-width="2.2"
+                    opacity=".55"
+                  />
+                </g>
+              </svg>
+            </div>
+          </div>
+
+          <dl class="facts">
+            <div>
+              <dt data-i18n="about.f1">Respuesta</dt>
+              <dd data-i18n="about.f1.v">el mismo día</dd>
+            </div>
+            <div>
+              <dt data-i18n="about.f2">Peso promedio</dt>
+              <dd data-i18n="about.f2.v">&lt; 300 KB</dd>
+            </div>
+            <div>
+              <dt data-i18n="about.f3">Idiomas</dt>
+              <dd class="lang-list" data-lang-list>
+                <span class="lang-item" lang="es">Español</span
+                ><span class="lang-item" lang="ru">Русский</span>
+              </dd>
+            </div>
+            <div>
+              <dt data-i18n="about.f4">Idiomas del sitio</dt>
+              <dd class="fact-langs" data-i18n="about.f4.v">ES · EN · PT · DE · RU</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- REVIEWS -->
+      <section class="section" id="resenas" aria-labelledby="t-resenas">
+        <div class="wrap">
+          <p class="label"><span>06</span> <span data-i18n="reviews.label">Reseñas</span></p>
+          <h2 id="t-resenas" data-i18n="reviews.h2">Lo que dicen.</h2>
+          <p class="lede" data-i18n="reviews.lede">
+            Espacio para las primeras reseñas reales de clientes.
+          </p>
+
+          <div class="reviews-carousel">
+            <button
+              class="reviews-btn"
+              type="button"
+              data-reviews-prev
+              aria-label="Anterior"
+              data-i18n-aria="reviews.prev"
+            >
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M15.5 4.5 6.5 12l9 7.5z" fill="currentColor" />
+              </svg>
+            </button>
+            <ul
+              class="reviews"
+              data-reviews
+              tabindex="0"
+              aria-label="Reseñas"
+              data-i18n-aria="reviews.label"
+            >
+              <li class="review">
+                <blockquote data-i18n="reviews.1.q">
+                  “Antes me preguntaban precios y horarios todo el día. Ahora entran al sitio y ya
+                  saben todo.”
+                </blockquote>
+                <p class="review-name" data-i18n="reviews.1.n">Cliente de ejemplo</p>
+                <p class="review-meta" data-i18n="reviews.1.m">Comercio · Itapúa</p>
+              </li>
+              <li class="review">
+                <blockquote data-i18n="reviews.2.q">
+                  “Puse el enlace en Instagram y empezaron a escribirme por WhatsApp el mismo día.”
+                </blockquote>
+                <p class="review-name" data-i18n="reviews.2.n">Cliente de ejemplo</p>
+                <p class="review-meta" data-i18n="reviews.2.m">Servicio · Encarnación</p>
+              </li>
+              <li class="review">
+                <blockquote data-i18n="reviews.3.q">
+                  “Quedó claro qué ofrezco y cómo reservar. Ya no pierdo tiempo explicando lo
+                  mismo.”
+                </blockquote>
+                <p class="review-name" data-i18n="reviews.3.n">Cliente de ejemplo</p>
+                <p class="review-meta" data-i18n="reviews.3.m">Consultorio · Itapúa</p>
+              </li>
+              <li class="review">
+                <blockquote data-i18n="reviews.4.q">
+                  “El sitio carga rápido incluso con datos móviles. Antes la gente se iba antes de
+                  ver los precios.”
+                </blockquote>
+                <p class="review-name" data-i18n="reviews.4.n">Cliente de ejemplo</p>
+                <p class="review-meta" data-i18n="reviews.4.m">Comercio · Hohenau</p>
+              </li>
+              <li class="review">
+                <blockquote data-i18n="reviews.5.q">
+                  “Me encontraron en Google y llegaron sabiendo qué necesitaban. Cerré dos trabajos
+                  la primera semana.”
+                </blockquote>
+                <p class="review-name" data-i18n="reviews.5.n">Cliente de ejemplo</p>
+                <p class="review-meta" data-i18n="reviews.5.m">Servicio · Capitán Miranda</p>
+              </li>
+              <li class="review">
+                <blockquote data-i18n="reviews.6.q">
+                  “Lo hice en español y portugués para los clientes de la frontera. Ahora me
+                  escriben de los dos lados.”
+                </blockquote>
+                <p class="review-name" data-i18n="reviews.6.n">Cliente de ejemplo</p>
+                <p class="review-meta" data-i18n="reviews.6.m">Comercio · Encarnación</p>
+              </li>
+              <li class="review">
+                <blockquote data-i18n="reviews.7.q">
+                  “No tuve que entender de hosting ni de código: me lo entregó andando y me explicó
+                  lo básico.”
+                </blockquote>
+                <p class="review-name" data-i18n="reviews.7.n">Cliente de ejemplo</p>
+                <p class="review-meta" data-i18n="reviews.7.m">Consultorio · Bella Vista</p>
+              </li>
+            </ul>
+            <button
+              class="reviews-btn"
+              type="button"
+              data-reviews-next
+              aria-label="Siguiente"
+              data-i18n-aria="reviews.next"
+            >
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M8.5 4.5 17.5 12l-9 7.5z" fill="currentColor" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="section contact" id="contacto" aria-labelledby="t-contacto">
+        <div class="wrap">
+          <p class="label"><span>07</span> <span data-i18n="contact.label">Contacto</span></p>
+          <h2 id="t-contacto" data-i18n="contact.h2">Hablemos.</h2>
+          <p class="lede" data-i18n="contact.lede">
+            Contame qué hace tu negocio y qué necesitás. Te respondo el mismo día.
+          </p>
+
+          <ul class="channels">
+            <li class="channel-item">
+              <a class="channel" href="https://wa.me/595995690990" target="_blank" rel="noopener">
+                <span class="channel-icon channel-icon--wa" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="18" height="18">
+                    <path
+                      fill="currentColor"
+                      d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Z"
+                    />
+                    <path
+                      fill="none"
+                      stroke="#fff"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M8.1 7.2c.3-.4.5-.4.8-.4h.5c.2 0 .4 0 .5.4l.7 1.6c.1.2 0 .4-.1.5l-.5.6c-.1.1-.2.2-.1.4.2.4.6.9 1 1.3.4.4.9.7 1.3.9.2.1.3 0 .4-.1l.5-.5c.1-.1.3-.2.5-.1l1.6.7c.2.1.4.2.4.4v.5c0 .2-.1.4-.4.6-.4.2-1 .4-1.7.2-1.2-.3-2.4-1-3.4-2-1-1-1.7-2.2-2-3.4-.2-.7 0-1.3.2-1.7Z"
+                    />
+                  </svg>
+                </span>
+                <span class="channel-body">
+                  <span class="channel-label" data-i18n="contact.wa">WhatsApp</span>
+                  <span class="channel-value">+595 995 690 990</span>
+                </span>
+                <span class="channel-action" data-i18n="contact.open">Abrir</span>
+              </a>
+              <button
+                class="qr-mini"
+                type="button"
+                data-qr-open
+                data-qr-url="https://wa.me/595995690990"
+                aria-label="WhatsApp QR"
+                data-i18n-aria="qr.wa"
+              >
+                QR
+              </button>
+            </li>
+            <li class="channel-item">
+              <a class="channel" href="https://t.me/oficioev" target="_blank" rel="noopener">
+                <span class="channel-icon channel-icon--tg" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="18" height="18">
+                    <circle cx="12" cy="12" r="10" fill="currentColor" />
+                    <path
+                      fill="#fff"
+                      d="M6.9 11.7 16.7 7.6c.5-.2.9 0 .8.6l-1.6 7.6c-.1.5-.5.7-.9.4l-2.6-1.9-1.3 1.2c-.2.2-.3.3-.6.3l.2-2.6 4.9-4.4c.2-.2 0-.3-.3-.1l-6 3.8-2.7-.8c-.5-.2-.5-.5-.4-.7Z"
+                    />
+                  </svg>
+                </span>
+                <span class="channel-body">
+                  <span class="channel-label" data-i18n="contact.tg">Telegram</span>
+                  <span class="channel-value">@oficioev</span>
+                </span>
+                <span class="channel-action" data-i18n="contact.open">Abrir</span>
+              </a>
+              <button
+                class="qr-mini"
+                type="button"
+                data-qr-open
+                data-qr-url="https://t.me/oficioev"
+                aria-label="Telegram QR"
+                data-i18n-aria="qr.tg"
+              >
+                QR
+              </button>
+            </li>
+            <li class="channel-item">
+              <a
+                class="channel"
+                href="https://www.instagram.com/oficioev/"
+                target="_blank"
+                rel="noopener"
+              >
+                <span class="channel-icon channel-icon--ig" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="18" height="18">
+                    <rect x="2" y="2" width="20" height="20" rx="5.5" fill="currentColor" />
+                    <rect
+                      x="6.7"
+                      y="6.7"
+                      width="10.6"
+                      height="10.6"
+                      rx="3.2"
+                      fill="none"
+                      stroke="#fff"
+                      stroke-width="1.5"
+                    />
+                    <circle cx="12" cy="12" r="2.6" fill="none" stroke="#fff" stroke-width="1.5" />
+                    <circle cx="16.4" cy="7.6" r="1" fill="#fff" />
+                  </svg>
+                </span>
+                <span class="channel-body">
+                  <span class="channel-label" data-i18n="contact.ig">Instagram</span>
+                  <span class="channel-value">@oficioev</span>
+                </span>
+                <span class="channel-action" data-i18n="contact.open">Abrir</span>
+              </a>
+              <button
+                class="qr-mini"
+                type="button"
+                data-qr-open
+                data-qr-url="https://www.instagram.com/oficioev/"
+                aria-label="Instagram QR"
+                data-i18n-aria="qr.ig"
+              >
+                QR
+              </button>
+            </li>
+            <li>
+              <button class="channel" type="button" data-copy="hola@oficioev.com">
+                <span class="channel-icon channel-icon--mail" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="18" height="18">
+                    <rect x="2" y="2" width="20" height="20" rx="5.5" fill="currentColor" />
+                    <rect
+                      x="5.4"
+                      y="6.8"
+                      width="13.2"
+                      height="10.4"
+                      rx="1.7"
+                      fill="none"
+                      stroke="#fff"
+                      stroke-width="1.6"
+                    />
+                    <path
+                      d="m5.9 7.5 6.1 4.4 6.1-4.4"
+                      fill="none"
+                      stroke="#fff"
+                      stroke-width="1.6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+                <span class="channel-body">
+                  <span class="channel-label" data-i18n="contact.mail">Correo</span>
+                  <span class="channel-value">hola@oficioev.com</span>
+                </span>
+                <span
+                  class="channel-action"
+                  data-copy-label
+                  data-i18n="contact.copy"
+                  aria-live="polite"
+                  >Copiar</span
+                >
+              </button>
+            </li>
+          </ul>
+
+          <p class="meta-line" data-i18n="contact.meta">Obligado, Itapúa · Lun a Vie, 9 a 18</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <span
+          >© <span data-year>2026</span> Oficio EV ·
+          <span data-i18n="footer.role">Sitios web</span></span
+        >
+        <nav class="footer-links">
+          <a href="/faq" data-i18n="footer.faq">Preguntas frecuentes</a>
+          <a href="/condiciones" data-i18n="footer.terms">Condiciones del servicio</a>
+        </nav>
+        <span class="footer-note" data-i18n="footer.note">Hecho a mano, sin plantillas.</span>
+      </div>
+    </footer>
+
+    <dialog class="qr-dialog" data-qr-dialog aria-labelledby="qr-title">
+      <div class="qr-card">
+        <button
+          class="qr-close"
+          type="button"
+          data-qr-close
+          aria-label="Cerrar"
+          data-i18n-aria="qr.close"
+        >
+          ×
+        </button>
+        <p class="qr-kicker" data-i18n="qr.kicker">Abrir en el móvil</p>
+        <h2 id="qr-title" data-i18n="qr.title">Escaneá este código.</h2>
+        <div class="qr-box" data-qr-code></div>
+        <p class="qr-url" data-qr-url></p>
+        <p class="qr-hint" data-i18n="qr.hint">Apuntá la cámara del teléfono al código.</p>
+        <p class="qr-local" data-qr-local hidden data-i18n="qr.local">
+          Estás en local: el QR solo funcionará desde la versión pública.
+        </p>
+      </div>
+    </dialog>
+
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/qr.js"></script>
+    <script>
+      // Guard: if the module did not load (file://, network error, JS error),
+      // remove the class that hides sections. Content never disappears.
+      window.setTimeout(function () {
+        var d = document.documentElement;
+        if (d.dataset.reveal !== "on") d.classList.remove("reveal-ready");
+      }, 2500);
+    </script>
+  </body>
+</html>
