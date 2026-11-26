@@ -9,6 +9,7 @@
  *   chrome   → year, header, section reveal
  *   reviews  → reviews carousel
  *   works    → translated WhatsApp links on the work cards
+ *   compare  → mobile comparison labels
  *   copy     → clipboard copying
  */
 
@@ -19,6 +20,7 @@ import { initI18n } from "./i18n.js";
 import { initChrome } from "./chrome.js";
 import { initReviews } from "./reviews.js";
 import { initWorkLinks } from "./works.js";
+import { initCompare } from "./compare.js";
 import { initCopy } from "./copy.js";
 
 const root = document.documentElement;
@@ -32,4 +34,5 @@ const i18n = initI18n({ root, storage, params });
 initChrome();
 initReviews();
 initWorkLinks({ t: i18n.t });
+initCompare();
 initCopy({ t: i18n.t });
