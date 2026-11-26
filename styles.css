@@ -1615,7 +1615,7 @@ a {
   gap: 0.45em;
   height: 2.3em;
   padding: 0 0.9em;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid var(--bg);
 }
 
 .device-bar i {
@@ -1650,18 +1650,19 @@ a {
   right: 0;
   height: 2.4em;
   pointer-events: none;
-  z-index: 1;
+  z-index: 2;
+  transform: translateZ(0);
 }
 
 .device-screen::before {
   top: 0;
   /* Solid start: without it the first scrolling line peeks through the top edge. */
-  background: linear-gradient(to bottom, var(--bg) 0, var(--bg) 25%, transparent 100%);
+  background: linear-gradient(to bottom, var(--bg) 0, var(--bg) 0.8em, transparent 100%);
 }
 
 .device-screen::after {
   bottom: 0;
-  background: linear-gradient(to top, var(--bg) 0, var(--bg) 25%, transparent 100%);
+  background: linear-gradient(to top, var(--bg) 0, var(--bg) 0.8em, transparent 100%);
 }
 
 .device-notch {
@@ -1673,7 +1674,7 @@ a {
   height: 0.42em;
   border-radius: 0.21em;
   background: var(--line-strong);
-  z-index: 2;
+  z-index: 3;
 }
 
 /* Scrolling mock pages */
