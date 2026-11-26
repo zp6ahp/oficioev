@@ -86,13 +86,7 @@ The same check runs in GitHub Actions on every push and pull request
 
 ### Cloudflare Workers (current)
 
-The live site is a Worker with static assets. `wrangler.jsonc` defines:
-
-- assets directory: `./dist`;
-- `html_handling: "auto-trailing-slash"` → clean URLs `/`, `/faq`, `/condiciones`;
-- `not_found_handling: "404-page"` → custom `404.html`.
-
-Build and deploy:
+The live site is a Worker with static assets. Build and deploy:
 
 ```bash
 npm test
@@ -104,7 +98,12 @@ Or connect the repository to Workers Builds:
 
 - build command: `npm run build`;
 - deploy command: `npx wrangler deploy`;
-- root directory: `/`.
+- root directory: `/`;
+- assets directory: `dist`.
+
+Clean URLs (`/`, `/faq`, `/condiciones`) rely on the Worker's HTML handling.
+Set `not_found_handling` to `404-page` in the Worker assets configuration to
+serve the custom `404.html`.
 
 `_headers` adds `nosniff`, a referrer policy and clickjacking protection.
 `_redirects` keeps old `.html` URLs working with `301`.
