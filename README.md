@@ -84,41 +84,45 @@ The same check runs in GitHub Actions on every push and pull request
 
 ## 2. Deploy (free)
 
-### Cloudflare Pages
+### Cloudflare Workers (current)
 
-Build a clean deploy folder (only the files that ship) and upload it yourself
-with the Pages dashboard or Wrangler. No project or DNS record is created
-automatically by this repository.
+The live site is a Worker with static assets. `wrangler.jsonc` defines:
+
+- assets directory: `./dist`;
+- `html_handling: "auto-trailing-slash"` → clean URLs `/`, `/faq`, `/condiciones`;
+- `not_found_handling: "404-page"` → custom `404.html`.
+
+Build and deploy:
 
 ```bash
 npm test
 npm run build
-npx wrangler pages deploy dist --project-name YOUR_PROJECT --branch main
+npx wrangler deploy
 ```
 
-For a custom domain, create the Pages project first and attach the domain in
-the dashboard. If the domain is in the same Cloudflare account, these records
-are what Pages expects:
+Or connect the repository to Workers Builds:
 
-| Type  | Name  | Value                 | Proxy |
-| ----- | ----- | --------------------- | ----- |
-| CNAME | `@`   | `oficio-ev.pages.dev` | on    |
-| CNAME | `www` | `oficio-ev.pages.dev` | on    |
+- build command: `npm run build`;
+- deploy command: `npx wrangler deploy`;
+- root directory: `/`.
 
-`npm run build` only copies files — the site itself still has no build step.
 `_headers` adds `nosniff`, a referrer policy and clickjacking protection.
+`_redirects` keeps old `.html` URLs working with `301`.
+
+### Cloudflare Pages (alternative)
+
+Build `dist` and connect/upload it to Pages:
+
+- build command: `npm run build`;
+- output directory: `dist`.
+
+Clean URLs work the same way. Add the custom domain in **Pages → Custom domains**.
 
 ### GitHub Pages (alternative)
 
-1. Create a repository on GitHub, for example `oficio-ev`.
-2. Push the **contents** of this folder (not `node_modules` or `dist`).
-3. Settings → Pages → deploy from branch `main`, folder `/ (root)`.
-4. The site appears at `https://YOUR_USERNAME.github.io/oficio-ev/`.
-
-No build needed: GitHub serves the files directly. For a custom domain add a
-`CNAME` record to `YOUR_USERNAME.github.io` and enable HTTPS.
-
----
+GitHub Pages serves the site from a repository subpath (`/repo/`), while this
+site uses root-absolute clean URLs (`/faq`, `/condiciones`). For GitHub Pages,
+deploy at the domain root or adjust those links. Cloudflare is the primary target.
 
 ## 3. What to change when customising (10 minutes)
 

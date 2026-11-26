@@ -20,7 +20,8 @@ const files = [
   "favicon.svg",
   "robots.txt",
   "sitemap.xml",
-  "_headers"
+  "_headers",
+  "_redirects"
 ];
 const dirs = ["assets", "js"];
 
