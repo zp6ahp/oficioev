@@ -10,6 +10,7 @@
  *   reviews  → reviews carousel
  *   works    → translated WhatsApp links on the work cards
  *   compare  → mobile comparison labels
+ *   mock     → scrolling device screens
  *   copy     → clipboard copying
  */
 
@@ -21,6 +22,7 @@ import { initChrome } from "./chrome.js";
 import { initReviews } from "./reviews.js";
 import { initWorkLinks } from "./works.js";
 import { initCompare } from "./compare.js";
+import { initMockScroll } from "./mock-scroll.js";
 import { initCopy } from "./copy.js";
 
 const root = document.documentElement;
@@ -35,4 +37,5 @@ initChrome();
 initReviews();
 initWorkLinks({ t: i18n.t });
 initCompare();
+initMockScroll();
 initCopy({ t: i18n.t });

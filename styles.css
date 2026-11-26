@@ -1618,6 +1618,20 @@ a {
   border-bottom: 1px solid var(--bg);
 }
 
+.device-cap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1.2em;
+  background: var(--bg);
+  pointer-events: none;
+  z-index: 999;
+}
+
+.device--browser .device-cap {
+  top: calc(2.3em - 1px);
+}
+
 .device-bar i {
   width: 0.5em;
   height: 0.5em;
@@ -1639,6 +1653,7 @@ a {
   min-height: 0;
   overflow: hidden;
   background: var(--bg);
+  transform: translateZ(0);
 }
 
 /* Soft fade so scrolling content does not cut hard */
@@ -1648,21 +1663,19 @@ a {
   position: absolute;
   left: 0;
   right: 0;
-  height: 2.4em;
+  height: 4em;
   pointer-events: none;
-  z-index: 2;
-  transform: translateZ(0);
+  z-index: 1;
 }
 
 .device-screen::before {
   top: 0;
-  /* Solid start: without it the first scrolling line peeks through the top edge. */
-  background: linear-gradient(to bottom, var(--bg) 0, var(--bg) 0.8em, transparent 100%);
+  background: linear-gradient(to bottom, var(--bg) 0, var(--bg) 1.5em, transparent 100%);
 }
 
 .device-screen::after {
   bottom: 0;
-  background: linear-gradient(to top, var(--bg) 0, var(--bg) 0.8em, transparent 100%);
+  background: linear-gradient(to top, var(--bg) 0, var(--bg) 1.5em, transparent 100%);
 }
 
 .device-notch {
@@ -1674,15 +1687,15 @@ a {
   height: 0.42em;
   border-radius: 0.21em;
   background: var(--line-strong);
-  z-index: 3;
+  z-index: 21;
 }
 
 /* Scrolling mock pages */
 .mock-scroll {
+  position: relative;
   display: flex;
   flex-direction: column;
   animation: mock-scroll 34s linear infinite;
-  will-change: transform;
 }
 
 .mock-scroll--phone {
@@ -1691,10 +1704,10 @@ a {
 
 @keyframes mock-scroll {
   from {
-    transform: translateY(0);
+    top: 0;
   }
   to {
-    transform: translateY(-50%);
+    top: calc(-1 * var(--mock-distance, 0px));
   }
 }
 
