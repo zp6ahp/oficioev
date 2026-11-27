@@ -132,26 +132,26 @@
 }
 
 /* Orange */
-[data-theme="orange"][data-mode="light"] {
-  --accent: #f97316;
-  --accent-text: #b3400a;
-  --accent-soft: #fee7d6;
-  --accent-ink: #2b1104;
-  --bg: #fdf9f5;
-  --bg-soft: #f8f1ea;
-  --line: #eee2d6;
-  --line-strong: #dccbb9;
+[data-theme="clay"][data-mode="light"] {
+  --accent: #c2410c;
+  --accent-text: #9a3412;
+  --accent-soft: #f6e4d8;
+  --accent-ink: #ffffff;
+  --bg: #fbf7f3;
+  --bg-soft: #f6efe8;
+  --line: #ebe0d5;
+  --line-strong: #d8c6b6;
 }
-[data-theme="orange"][data-mode="dark"] {
-  --accent: #ffa35c;
-  --accent-text: #ffa35c;
-  --accent-soft: #33200f;
-  --accent-ink: #241003;
-  --bg: #151110;
-  --bg-soft: #1d1815;
-  --line: #2f2824;
-  --line-strong: #3f352f;
-  --surface: #1d1714;
+[data-theme="clay"][data-mode="dark"] {
+  --accent: #e8927c;
+  --accent-text: #efa48c;
+  --accent-soft: #2f1c14;
+  --accent-ink: #1b0e08;
+  --bg: #141110;
+  --bg-soft: #1c1613;
+  --line: #2e2721;
+  --line-strong: #3d332c;
+  --surface: #1c1512;
 }
 
 /* ── Reset ──────────────────────────────────────────────────── */
@@ -326,43 +326,33 @@ a {
   display: flex;
 }
 
-.swatches {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-}
-
-/* 24×24 target size (WCAG 2.2 AA), 16px visible dot */
-.swatch {
+.theme {
   position: relative;
-  width: 24px;
-  height: 24px;
-  padding: 0;
-  border: 0;
-  background: none;
-  cursor: pointer;
 }
 
-.swatch::before {
-  content: "";
-  position: absolute;
-  inset: 4px;
+.theme-btn {
+  gap: 6px;
+}
+
+.theme-dot {
+  display: block;
+  width: 14px;
+  height: 14px;
+  flex: none;
   border-radius: 50%;
   border: 1px solid var(--control-line);
-  background: var(--swatch);
-  transition:
-    transform var(--dur) var(--ease),
-    box-shadow var(--dur) var(--ease);
+  background: var(--swatch, currentColor);
 }
 
-.swatch:hover::before {
-  transform: scale(1.14);
+.theme-menu {
+  left: 0;
+  right: auto;
+  min-width: 176px;
 }
 
-.swatch[aria-checked="true"]::before {
-  box-shadow:
-    0 0 0 2px var(--bg),
-    0 0 0 3.5px var(--ink);
+.theme-option[aria-selected="true"] {
+  background: var(--accent-soft);
+  color: var(--ink);
 }
 
 .mode-btn {
@@ -503,8 +493,8 @@ a {
   }
 }
 
-/* Two-row header below 700px: logo gets its own line so the controls can breathe. */
-@media (max-width: 700px) {
+/* Two-row header on very narrow screens: the compact picker still needs room. */
+@media (max-width: 380px) {
   :root {
     --header-h: 76px;
   }

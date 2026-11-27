@@ -8,7 +8,7 @@ export default {
   "ui.mode.dark": "Ночь",
   "ui.theme.green": "Зелёная",
   "ui.theme.blue": "Синяя",
-  "ui.theme.orange": "Оранжевая",
+  "ui.theme.clay": "Терракотовая",
   "ui.theme.mono": "Монохром",
   "nav.services": "Услуги",
   "nav.how": "Как это работает",

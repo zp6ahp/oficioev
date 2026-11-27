@@ -1,6 +1,6 @@
 /**
  * params.js — single responsibility: URL parameters.
- * ?lang=ru&theme=orange&mode=dark
+ * ?lang=ru&theme=clay&mode=dark
  */
 
 export function readParams() {

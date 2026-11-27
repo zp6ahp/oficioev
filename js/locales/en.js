@@ -8,7 +8,7 @@ export default {
   "ui.mode.dark": "Night",
   "ui.theme.green": "Green",
   "ui.theme.blue": "Blue",
-  "ui.theme.orange": "Orange",
+  "ui.theme.clay": "Terracotta",
   "ui.theme.mono": "Monochrome",
   "nav.services": "Services",
   "nav.how": "How it works",

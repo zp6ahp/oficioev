@@ -7,11 +7,11 @@ export const DEFAULT_THEME = "blue";
 export const DEFAULT_LANGUAGE = "es";
 export const FALLBACK_LANGUAGE = "en";
 
-/** Header order: blue → green → orange → mono. */
+/** Header order: blue → green → clay → mono. */
 export const THEMES = [
   { id: "blue", swatch: "#1e6fd9" },
   { id: "green", swatch: "#25d366" },
-  { id: "orange", swatch: "#f97316" },
+  { id: "clay", swatch: "#c2410c" },
   { id: "mono", swatch: "linear-gradient(90deg, #111 0 50%, #fff 50% 100%)" }
 ];
 
