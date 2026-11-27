@@ -503,18 +503,18 @@ a {
   }
 }
 
-/* Two-row header on narrow screens: no horizontal scroll at 320px */
-@media (max-width: 560px) {
+/* Two-row header below 700px: logo gets its own line so the controls can breathe. */
+@media (max-width: 700px) {
   :root {
-    --header-h: 92px;
+    --header-h: 76px;
   }
   .site-header {
     height: auto;
   }
   .header-inner {
     grid-template-columns: 1fr;
-    row-gap: 8px;
-    padding-block: 10px;
+    row-gap: 6px;
+    padding-block: 10px 12px;
   }
   .brand {
     justify-self: start;
