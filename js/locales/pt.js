@@ -73,7 +73,7 @@ export default {
   "contact.open": "Abrir",
   "contact.copy": "Copiar",
   "contact.copied": "Copiado!",
-  "contact.meta": "Obligado, Itapúa · Seg a Sex, 9h às 18h",
+  "contact.meta": "Obligado, Itapúa · Seg a Sex, 10h às 18h",
   "footer.role": "Sites",
   "footer.note": "Feito à mão, sem templates.",
   "meta.title": "Oficio EV · Sites em Itapúa, prontos em uma semana",

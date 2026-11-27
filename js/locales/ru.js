@@ -72,7 +72,7 @@ export default {
   "contact.open": "Открыть",
   "contact.copy": "Копировать",
   "contact.copied": "Скопировано",
-  "contact.meta": "Облигадо, Итапуа · Пн–Пт, 9:00–18:00",
+  "contact.meta": "Облигадо, Итапуа · Пн–Пт, 10:00–18:00",
   "footer.role": "Сайты",
   "footer.note": "Сделано вручную, без шаблонов.",
   "meta.title": "Oficio EV · Сайты в Итапуа — готовы за неделю",

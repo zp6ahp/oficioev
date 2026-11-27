@@ -275,24 +275,12 @@ a {
   letter-spacing: -0.01em;
 }
 
-.brand-mark {
-  display: grid;
-  place-items: center;
-  width: 28px;
-  height: 28px;
-  border-radius: 8px;
-  background: var(--ink);
-  color: var(--bg);
-  font-family: var(--font-display);
-  font-size: 15px;
-  line-height: 1;
-}
-
-.brand-name {
-  font-size: var(--step-0);
-}
-.brand-dot {
-  color: var(--accent-text);
+/* Inline wordmark: inherits the theme colour through currentColor. */
+.brand-logo {
+  display: block;
+  height: 17px;
+  width: auto;
+  fill: currentColor;
 }
 
 .nav {
