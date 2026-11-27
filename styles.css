@@ -330,10 +330,6 @@ a {
   position: relative;
 }
 
-.theme-btn {
-  gap: 6px;
-}
-
 .theme-dot {
   display: block;
   width: 14px;
@@ -404,9 +400,9 @@ a {
 .lang-btn {
   display: inline-flex;
   align-items: center;
-  gap: 3px;
+  gap: 6px;
   height: 30px;
-  padding: 0 7px;
+  padding: 0 8px;
   font: inherit;
   font-size: 12px;
   font-weight: 600;
@@ -414,7 +410,7 @@ a {
   color: var(--ink);
   background: transparent;
   border: 1px solid var(--control-line);
-  border-radius: 8px;
+  border-radius: 9px;
   cursor: pointer;
   transition: border-color var(--dur) var(--ease);
 }
